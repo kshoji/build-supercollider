@@ -16,7 +16,7 @@ sc3-plugins
 ```bash
 $ git clone https://github.com/kshoji/build-supercollider/
 $ cd build-supercollider
-$ ./deploy-sc.sh
+$ ./deploy_sc.sh
 ```
 
 That's all.
