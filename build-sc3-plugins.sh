@@ -67,7 +67,7 @@ sudo mkdir -p $SC3_EXT_DIRECTORY
 #
 echo -e "#\n# And build it.\n#"
 cd $SC3_PLUGINS_BUILD_DIR && \
-    cmake -DCMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/ \
+    cmake -DCMAKE_PREFIX_PATH=/usr/lib/arm-linux-gnueabihf/ \
           -DCMAKE_INSTALL_PREFIX=/usr/local \
           -DCMAKE_BUILD_TYPE=RelWithDebInfo \
           -DSC_PATH=$SUPERCOLLIDER_DIR \
@@ -75,7 +75,7 @@ cd $SC3_PLUGINS_BUILD_DIR && \
           -DBUILD_TESTING=OFF \
           -DQUARKS=ON \
           -DNATIVE=ON .. && \
-    make -j4 && \
+    make -j1 && \
     sudo make install && \
     sudo ldconfig && \
     sudo mv $SC3_DIRECTORY/SC3plugins $SC3_EXT_DIRECTORY/SC3plugins

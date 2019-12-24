@@ -1,4 +1,4 @@
-# Install supercollider and sc3-plugins
+# Install supercollider and sc3-plugins into Raspbian Lite(CLI)
 
 A _dead simple_ script that installs (build) dependencies, clones [Supercollider](https://github.com/supercollider/supercollider/) and [sc3-plugins](https://github.com/supercollider/sc3-plugins), builds it, and finally will install it.
 
@@ -14,9 +14,9 @@ sc3-plugins
 ## How to?
 
 ```bash
-$ git clone https://github.com/willbasky/build-supercollider/
+$ git clone https://github.com/kshoji/build-supercollider/
 $ cd build-supercollider
-$ sh deploy.sh
+$ ./deploy-sc.sh
 ```
 
 That's all.

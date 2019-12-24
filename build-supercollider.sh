@@ -31,7 +31,7 @@ sudo apt install -yq \
          git libxt-dev libcwiid-dev libqt5webkit5-dev libqt5sensors5-dev \
          qt5-default qt5-qmake qttools5-dev qttools5-dev-tools \
          qtdeclarative5-dev qtpositioning5-dev libqt5opengl5-dev \
-         qtwebengine5-dev libqt5svg5-dev libqt5websockets5-dev
+         libqt5svg5-dev libqt5websockets5-dev
 
 ###
 #
@@ -63,14 +63,17 @@ mkdir -p $SUPERCOLLIDER_BUILD_DIR
 echo -e "#\n# And build it.\n#"
 cd $SUPERCOLLIDER_BUILD_DIR && \
     cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
-          -DCMAKE_PREFIX_PATH=/usr/lib/x86_64-linux-gnu/ \
+          -DCMAKE_PREFIX_PATH=/usr/lib/arm-linux-gnueabihf/ \
           -DBUILD_TESTING=OFF \
           -DCMAKE_BUILD_TYPE=RelWithDebInfo \
           -DSC_EL=OFF \
           -DSC_ED=OFF \
-          -DSC_VIM=OFF \
-          -DSC_IDE=ON \
+          -DSC_USE_QTWEBENGINE=OFF \
+          -DNO_X11=ON \
+          -DSC_QT=OFF \
+          -DSC_VIM=ON \
+          -DSC_IDE=OFF \
           -DNATIVE=ON .. && \
-    make -j4 && \
+    make -j1 && \
     sudo make install && \
     sudo ldconfig
