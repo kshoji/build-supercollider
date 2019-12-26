@@ -71,7 +71,7 @@ cd $SC3_PLUGINS_BUILD_DIR && \
           -DCMAKE_INSTALL_PREFIX=/usr/local \
           -DCMAKE_BUILD_TYPE=RelWithDebInfo \
           -DSC_PATH=$SUPERCOLLIDER_DIR \
-          -DSUPERNOVA=ON \
+          -DSUPERNOVA=OFF \
           -DBUILD_TESTING=OFF \
           -DQUARKS=ON \
           -DNATIVE=ON .. && \
@@ -81,4 +81,3 @@ cd $SC3_PLUGINS_BUILD_DIR && \
     sudo mv $SC3_DIRECTORY/SC3plugins $SC3_EXT_DIRECTORY/SC3plugins
     # This plugin ceases scsynth launching. In new version there will be flag to deactivate ladspa.
     sudo rm /usr/local/lib/SuperCollider/plugins/LadspaUGen.so
-    sudo rm /usr/local/lib/SuperCollider/plugins/LadspaUGen_supernova.so

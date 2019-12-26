@@ -73,7 +73,8 @@ cd $SUPERCOLLIDER_BUILD_DIR && \
           -DSC_QT=OFF \
           -DSC_VIM=ON \
           -DSC_IDE=OFF \
-          -DNATIVE=ON .. && \
+          -DNATIVE=ON \
+          -DSUPERNOVA=OFF .. && \
     make -j1 && \
     sudo make install && \
     sudo ldconfig
